@@ -41,8 +41,12 @@
   }
 }
 </script>
+  <!-- Add Babel for in-browser JSX/TSX transpilation, required for deployment -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
   <body>
     <div id="root"></div>
+    <!-- Load the main React application script with babel for transpilation -->
+    <script type="text/babel" data-type="module" src="index.tsx"></script>
   </body>
 </html>
