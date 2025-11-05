@@ -1,4 +1,4 @@
-import { ProjectPhase, Lead, Broker, Plot, CostCategory, DocumentFolder, InventoryItem, UserRole, View, DPREntry, WorkProgress, Employee, PlotStatus, Message, Department } from './types';
+import { ProjectPhase, Lead, Broker, Plot, CostCategory, DocumentFolder, InventoryItem, UserRole, View, DPREntry, WorkProgress, Employee, PlotStatus, Message, Department } from './types.js';
 
 // =================================================================
 // Role Based Access Control (RBAC)

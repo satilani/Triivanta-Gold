@@ -1,20 +1,20 @@
 import React, { useState, useCallback, useEffect, createContext, useContext } from 'react';
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import Dashboard from './components/Dashboard';
-import Financials from './components/Financials';
-import Sales from './components/Sales';
-import Timeline from './components/Timeline';
-import { SalesPipeline } from './components/CRM';
-import Brokers from './components/Brokers';
-import SiteLayout from './components/SiteLayout';
-import Documents from './components/Documents';
-import Inventory from './components/Inventory';
-import DPR from './components/DPR';
-import Employees from './components/Employees';
-import Messaging from './components/Messaging';
-import { View, Notification, NotificationType, UserRole, DPREntry, ProjectPhase } from './types';
-import { ROLE_PERMISSIONS, DPR_DATA, PROJECT_TIMELINE } from './constants';
+import Sidebar from './components/Sidebar.js';
+import Header from './components/Header.js';
+import Dashboard from './components/Dashboard.js';
+import Financials from './components/Financials.js';
+import Sales from './components/Sales.js';
+import Timeline from './components/Timeline.js';
+import { SalesPipeline } from './components/CRM.js';
+import Brokers from './components/Brokers.js';
+import SiteLayout from './components/SiteLayout.js';
+import Documents from './components/Documents.js';
+import Inventory from './components/Inventory.js';
+import DPR from './components/DPR.js';
+import Employees from './components/Employees.js';
+import Messaging from './components/Messaging.js';
+import { View, Notification, NotificationType, UserRole, DPREntry, ProjectPhase } from './types.js';
+import { ROLE_PERMISSIONS, DPR_DATA, PROJECT_TIMELINE } from './constants.js';
 
 type Theme = 'light' | 'dark';
 
