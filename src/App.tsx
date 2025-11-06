@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, createContext, useContext } from 'react';
+import React, { useState, useCallback, useEffect, useContext } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
@@ -13,20 +13,11 @@ import Inventory from './components/Inventory';
 import DPR from './components/DPR';
 import Employees from './components/Employees';
 import Messaging from './components/Messaging';
-import { View, Notification, NotificationType, UserRole, DPREntry, ProjectPhase } from './types';
+// FIX: Import contexts and related types from ./types to break circular dependency.
+import { View, Notification, NotificationType, UserRole, DPREntry, ProjectPhase, Theme, ThemeContext, RoleContext } from './types';
 import { ROLE_PERMISSIONS, DPR_DATA, PROJECT_TIMELINE } from './constants';
 
-type Theme = 'light' | 'dark';
-
-interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-
-export const ThemeContext = createContext<ThemeContextType>({
-  theme: 'dark',
-  toggleTheme: () => {},
-});
+// The context definitions have been moved to types.ts to break a circular dependency.
 
 const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>('dark');
@@ -57,16 +48,6 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     </ThemeContext.Provider>
   );
 };
-
-interface RoleContextType {
-  role: UserRole;
-  setRole: (role: UserRole) => void;
-}
-
-export const RoleContext = createContext<RoleContextType>({
-  role: UserRole.CEO,
-  setRole: () => {},
-});
 
 const RoleProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [role, setRole] = useState<UserRole>(UserRole.CEO);
