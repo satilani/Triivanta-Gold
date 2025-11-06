@@ -1,4 +1,4 @@
-import { ProjectPhase, Lead, Broker, Plot, CostCategory, DocumentFolder, InventoryItem, UserRole, View, DPREntry, WorkProgress, Employee, PlotStatus, Message, Department } from './types';
+import { ProjectPhase, Lead, Broker, Plot, CostCategory, DocumentFolder, InventoryItem, UserRole, View, DPREntry, Employee, PlotStatus, Message, Department } from './types';
 
 // =================================================================
 // Role Based Access Control (RBAC)
@@ -105,7 +105,7 @@ export const FUNDING_SOURCES_COLORS = {
     light: { internal: '#B38E4C', advance: '#D0A964' }
 }
 
-export const FUNDING_SOURCES = [
+export const FUNDING_SOURCES: { name: string; value: number; colorKey: keyof typeof FUNDING_SOURCES_COLORS['dark'] }[] = [
   { name: 'Internal Capital', value: 60, colorKey: 'internal' }, 
   { name: 'Advance Booking Revenue', value: 40, colorKey: 'advance' }, 
 ];
@@ -129,9 +129,9 @@ export const SALES_TIERS_COLORS = {
 };
 
 export const SALES_TIERS = [
-  { name: 'Founder\'s Tier', soldSqFt: 35000, targetSqFt: 35000, pricePerSqFt: 2100, colorKey: 'founder' }, 
-  { name: 'Early Investor Tier', soldSqFt: 70000, targetSqFt: 70000, pricePerSqFt: 2700, colorKey: 'early' },
-  { name: 'Standard Tier', soldSqFt: 15000, targetSqFt: 60000, pricePerSqFt: 3000, colorKey: 'standard' },
+  { name: 'Founder\'s Tier', soldSqFt: 35000, targetSqFt: 35000, pricePerSqFt: 2100, colorKey: 'founder' as keyof typeof SALES_TIERS_COLORS['dark'] }, 
+  { name: 'Early Investor Tier', soldSqFt: 70000, targetSqFt: 70000, pricePerSqFt: 2700, colorKey: 'early' as keyof typeof SALES_TIERS_COLORS['dark'] },
+  { name: 'Standard Tier', soldSqFt: 15000, targetSqFt: 60000, pricePerSqFt: 3000, colorKey: 'standard' as keyof typeof SALES_TIERS_COLORS['dark'] },
 ];
 export const TOTAL_PLOTTED_AREA_SQFT = 139230;
 
@@ -148,9 +148,9 @@ export const PLOT_INVENTORY_COLORS = {
 }
 
 export const PLOT_INVENTORY_DATA = [
-    { name: 'Available', value: 19, colorKey: 'available'}, 
-    { name: 'Booked', value: 24, colorKey: 'booked'}, 
-    { name: 'Sold', value: 38, colorKey: 'sold'}, 
+    { name: 'Available', value: 19, colorKey: 'available' as keyof typeof PLOT_INVENTORY_COLORS['dark']}, 
+    { name: 'Booked', value: 24, colorKey: 'booked' as keyof typeof PLOT_INVENTORY_COLORS['dark']}, 
+    { name: 'Sold', value: 38, colorKey: 'sold' as keyof typeof PLOT_INVENTORY_COLORS['dark']}, 
 ];
 
 // =================================================================

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// FIX: Remove file extension from import
 import App from './App';
 import './index.css';
 

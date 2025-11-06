@@ -1,13 +1,13 @@
 import React, { useContext, useState, useMemo, useEffect } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend, ComposedChart, Bar, Line, XAxis, YAxis } from 'recharts';
-import Card from './ui/Card';
-import ProgressBar from './ui/ProgressBar';
-import { COST_BREAKDOWN, FUNDING_SOURCES, SALES_TIERS, CASH_FLOW_DATA, COST_BREAKDOWN_COLORS, FUNDING_SOURCES_COLORS } from '../constants';
+import Card from './ui/Card.tsx';
+import ProgressBar from './ui/ProgressBar.tsx';
+import { COST_BREAKDOWN, FUNDING_SOURCES, SALES_TIERS, CASH_FLOW_DATA, COST_BREAKDOWN_COLORS, FUNDING_SOURCES_COLORS } from '../constants.ts';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 // FIX: Updated import path for context to break circular dependency.
-import { ThemeContext } from '../types';
-import { CostCategory, Department } from '../types';
+import { ThemeContext } from '../types.ts';
+import { CostCategory, Department } from '../types.ts';
 
 const departments: Department[] = ['Management', 'Engineering', 'Sales', 'HR & Admin', 'Site Operations'];
 
@@ -76,10 +76,14 @@ const Financials: React.FC = () => {
     const [currentItem, setCurrentItem] = useState<Omit<CostCategory, 'color'> | null>(null);
 
     const costBreakdownData = useMemo(() => {
-        return costItems.map(item => ({...item, color: COST_BREAKDOWN_COLORS[theme][item.colorKey]}))
+        const themeColors = COST_BREAKDOWN_COLORS[theme];
+        return costItems.map(item => ({...item, color: themeColors[item.colorKey]}))
     }, [costItems, theme]);
     
-    const fundingSourcesData = FUNDING_SOURCES.map(item => ({...item, color: FUNDING_SOURCES_COLORS[theme][item.colorKey]}));
+    const fundingSourcesData = useMemo(() => {
+        const themeColors = FUNDING_SOURCES_COLORS[theme];
+        return FUNDING_SOURCES.map(item => ({...item, color: themeColors[item.colorKey]}));
+    }, [theme]);
     
     const formatCurrency = (value: number) => `₹${(value / 10000000).toFixed(2)} Cr`;
     
@@ -110,9 +114,9 @@ const Financials: React.FC = () => {
 
     const CustomCashFlowTooltip = ({ active, payload, label }: any) => {
         if (active && payload && payload.length) {
-            const inflowData = payload.find(p => p.dataKey === 'inflow');
-            const outflowData = payload.find(p => p.dataKey === 'outflow');
-            const netData = payload.find(p => p.dataKey === 'net');
+            const inflowData = payload.find((p: any) => p.dataKey === 'inflow');
+            const outflowData = payload.find((p: any) => p.dataKey === 'outflow');
+            const netData = payload.find((p: any) => p.dataKey === 'net');
             
             return (
               <div className="bg-white dark:bg-brand-secondary p-3 rounded-lg border border-slate-200 dark:border-brand-border shadow-lg text-sm">

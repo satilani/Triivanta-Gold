@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from 'react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+// FIX: Remove file extensions from imports
 import {
   TOTAL_PROJECT_BUDGET,
   TOTAL_PLOTS,

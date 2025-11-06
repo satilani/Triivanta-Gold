@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useRef } from 'react';
+// FIX: Remove file extensions from imports
 import Card from './ui/Card';
 import { DOCUMENT_DATA } from '../constants';
 import { DocumentFolder, ProjectDocument } from '../types';
@@ -124,13 +125,14 @@ const Documents: React.FC = () => {
             doc.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
-        if (sortConfig !== null) {
+        if (sortConfig) {
+            const { key, direction } = sortConfig;
             docs.sort((a, b) => {
-                if (a[sortConfig.key] < b[sortConfig.key]) {
-                    return sortConfig.direction === 'asc' ? -1 : 1;
+                if (a[key] < b[key]) {
+                    return direction === 'asc' ? -1 : 1;
                 }
-                if (a[sortConfig.key] > b[sortConfig.key]) {
-                    return sortConfig.direction === 'asc' ? 1 : -1;
+                if (a[key] > b[key]) {
+                    return direction === 'asc' ? 1 : -1;
                 }
                 return 0;
             });

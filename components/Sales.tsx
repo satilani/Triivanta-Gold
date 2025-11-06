@@ -12,11 +12,11 @@ import {
     SALES_TIERS_COLORS,
     PLOT_INVENTORY_COLORS
 } from '../constants';
-import { ResponsiveContainer, LineChart, Line, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts';
 import { PlotStatus } from '../types';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import { ThemeContext } from '../App';
+// FIX: Import ThemeContext from `../types` to fix circular dependency.
+import { ThemeContext } from '../types';
 
 // Custom Tooltip for the Pie Chart
 const CustomPieTooltip: React.FC<{ active?: boolean; payload?: any[]; label?: string }> = ({ active, payload }) => {

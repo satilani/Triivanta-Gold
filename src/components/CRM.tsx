@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
+// FIX: Remove file extensions from imports
 import { SALES_PIPELINE_DATA, BROKER_DATA, PLOT_DATA } from '../constants';
-import { Lead, LeadStatus, Activity, ActivityType, Broker } from '../types';
+import { Lead, LeadStatus, ActivityType, Broker } from '../types';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 

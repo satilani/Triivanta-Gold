@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useContext } from 'react';
 import { ResponsiveContainer, ComposedChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+// FIX: Remove file extensions from imports
 import Card from './ui/Card';
 import { BROKER_DATA } from '../constants';
 import { Broker } from '../types';

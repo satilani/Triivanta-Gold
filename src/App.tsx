@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect, useContext } from 'react';
+// FIX: Remove file extensions from imports
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
@@ -14,6 +15,7 @@ import DPR from './components/DPR';
 import Employees from './components/Employees';
 import Messaging from './components/Messaging';
 // FIX: Import contexts and related types from ./types to break circular dependency.
+// FIX: Remove file extensions from imports
 import { View, Notification, NotificationType, UserRole, DPREntry, ProjectPhase, Theme, ThemeContext, RoleContext } from './types';
 import { ROLE_PERMISSIONS, DPR_DATA, PROJECT_TIMELINE } from './constants';
 

@@ -1,9 +1,8 @@
-import React, { useState, useMemo, useContext } from 'react';
+import React, { useState, useMemo } from 'react';
+// FIX: Remove file extensions from imports
 import Card from './ui/Card';
 import { INVENTORY_DATA, DPR_WORK_ITEMS } from '../constants';
 import { DPREntry, WorkProgress } from '../types';
-// FIX: Updated import path for context to break circular dependency.
-import { RoleContext } from '../types';
 
 interface DPRProps {
     dprEntries: DPREntry[];
@@ -257,7 +256,6 @@ const AddEditDPRModal: React.FC<{
 
 
 const DPR: React.FC<DPRProps> = ({ dprEntries, setDprEntries }) => {
-    const { role } = useContext(RoleContext);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [entryToEdit, setEntryToEdit] = useState<DPREntry | null>(null);
 
