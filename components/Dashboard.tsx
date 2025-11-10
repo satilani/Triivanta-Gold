@@ -17,7 +17,7 @@ import {
 } from '../constants';
 import Card from './ui/Card';
 import ProgressBar from './ui/ProgressBar';
-import { ThemeContext, RoleContext } from '../App';
+import { ThemeContext, RoleContext } from '../contexts';
 import WorkProgressSummary from './WorkProgressSummary';
 import { UserRole } from '../types';
 

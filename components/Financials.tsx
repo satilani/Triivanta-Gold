@@ -1,3 +1,4 @@
+
 import React, { useContext, useState, useMemo, useEffect } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend, ComposedChart, Bar, Line, XAxis, YAxis } from 'recharts';
 import Card from './ui/Card';
@@ -5,7 +6,7 @@ import ProgressBar from './ui/ProgressBar';
 import { COST_BREAKDOWN, FUNDING_SOURCES, SALES_TIERS, CASH_FLOW_DATA, COST_BREAKDOWN_COLORS, FUNDING_SOURCES_COLORS } from '../constants';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../contexts';
 import { CostCategory, Department } from '../types';
 
 const departments: Department[] = ['Management', 'Engineering', 'Sales', 'HR & Admin', 'Site Operations'];

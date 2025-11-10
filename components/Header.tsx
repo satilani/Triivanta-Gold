@@ -1,6 +1,7 @@
+
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { View, Notification, NotificationType, UserRole } from '../types';
-import { ThemeContext, RoleContext } from '../App';
+import { ThemeContext, RoleContext } from '../contexts';
 
 interface HeaderProps {
   title: string;

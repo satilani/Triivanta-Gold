@@ -4,7 +4,7 @@ import { ResponsiveContainer, ComposedChart, Bar, XAxis, YAxis, Tooltip, Legend 
 import Card from './ui/Card';
 import { BROKER_DATA } from '../constants';
 import { Broker } from '../types';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../contexts';
 
 const formatCurrency = (value: number) => {
     if (value >= 10000000) {

@@ -1,8 +1,9 @@
+
 import React, { useState, useMemo, useContext } from 'react';
 import Card from './ui/Card';
 import { INVENTORY_DATA, DPR_WORK_ITEMS } from '../constants';
 import { DPREntry, WorkProgress } from '../types';
-import { RoleContext } from '../App';
+import { RoleContext } from '../contexts';
 
 interface DPRProps {
     dprEntries: DPREntry[];

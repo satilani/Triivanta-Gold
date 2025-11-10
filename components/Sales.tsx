@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useContext } from 'react';
 import Card from './ui/Card';
 import ProgressBar from './ui/ProgressBar';
@@ -16,7 +17,7 @@ import { ResponsiveContainer, LineChart, Line, BarChart, Bar, XAxis, YAxis, Tool
 import { PlotStatus } from '../types';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../contexts';
 
 // Custom Tooltip for the Pie Chart
 const CustomPieTooltip: React.FC<{ active?: boolean; payload?: any[]; label?: string }> = ({ active, payload }) => {
